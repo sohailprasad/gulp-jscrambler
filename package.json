@@ -1,0 +1,42 @@
+{
+  "name": "gulp-jscrambler",
+  "description": "Obfuscate your source files using the JScrambler API.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/auditmark/gulp-jscrambler",
+  "author": "José Magalhães <jose.magalhaes@auditmark.com> (https://github.com/magalhas)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:auditmark/gulp-jscrambler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/auditmark/gulp-jscrambler/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/auditmark/gulp-jscrambler/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.1"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "event-stream": "^3.1.5",
+    "lodash": "^2.4.1",
+    "gulp-util": "^2.2.14",
+    "jscrambler": "^0.3.3"
+  },
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "jscrambler": "^0.3.1"
+  },
+  "keywords": [
+    "gulpplugin",
+    "jscrambler",
+    "obfuscate",
+    "protect",
+    "js",
+    "javascript"
+  ]
+}
