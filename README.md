@@ -42,6 +42,21 @@ Type: `String`
 
 A string value that is used to sign requests to the JScrambler API.
 
+### host
+Type: `String`
+
+A string value that is used to provide the JScrambler's host.
+
+### port
+Type: `Number`
+
+A number value that is used to provide the JScrambler's port.
+
+### apiVersion
+Type: `String`
+
+A string value that is used to select the version of JScrambler.
+
 ### deleteProject
 Type: `Boolean`
 
