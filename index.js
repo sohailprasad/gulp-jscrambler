@@ -37,35 +37,23 @@ module.exports = function (options) {
   };
   var scramble = function () {
     var self = this;
-    var client = new jScrambler.Client({
-      accessKey: options.keys.accessKey,
-      secretKey: options.keys.secretKey,
+    jScrambler.process({
+      filesSrc: filesSrc,
+      keys: {
+        accessKey: options.keys.accessKey,
+        secretKey: options.keys.secretKey
+      },
       host: options.host,
       port: options.port,
-      apiVersion: options.apiVersion
-    });
-    jScrambler
-      .uploadCode(client, _.merge(options.params, {
-        files: filesSrc
-      }))
-      .then(function (res) {
-        projectId = res.id;
-        return jScrambler.downloadCode(client, res.id);
-      })
-      .then(function (res) {
-        return jScrambler.unzipProject(res, function (buffer, file) {
-          var relativePath = path.relative(process.cwd(), file);
-          self.emit('data', new File({
-            path: relativePath,
-            contents: buffer
-          }));
-        })
-      })
-      .then(function () {
-        if (options.deleteProject) {
-          return jScrambler.deleteCode(client, projectId);
-        }
-      })
+      apiVersion: options.apiVersion,
+      deleteProject: options.deleteProject
+    }, function (buffer, file) {
+      var relativePath = path.relative(process.cwd(), file);
+      self.emit('data', new File({
+        path: relativePath,
+        contents: buffer
+      }));
+    })
       .done(function () {
         self.emit('end');
       });
