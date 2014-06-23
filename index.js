@@ -46,7 +46,8 @@ module.exports = function (options) {
       host: options.host,
       port: options.port,
       apiVersion: options.apiVersion,
-      deleteProject: options.deleteProject
+      deleteProject: options.deleteProject,
+      params: options.params
     }, function (buffer, file) {
       var relativePath = path.relative(process.cwd(), file);
       self.emit('data', new File({
