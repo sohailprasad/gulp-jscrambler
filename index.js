@@ -29,7 +29,7 @@ module.exports = function (options) {
       string_splitting:'%DEFAULT%'
     }
   });
-	var aggregate = function (file) {
+  var aggregate = function (file) {
     if (file.contents) {
       filesSrc.push(file);
       files[path.relative(process.cwd(), file.path)] = file;
@@ -58,6 +58,6 @@ module.exports = function (options) {
       .done(function () {
         self.emit('end');
       });
-	};
-	return es.through(aggregate, scramble);
+  };
+  return es.through(aggregate, scramble);
 };
