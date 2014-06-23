@@ -27,7 +27,7 @@
     "event-stream": "^3.1.5",
     "lodash": "^2.4.1",
     "gulp-util": "^2.2.14",
-    "jscrambler": "^0.5.0"
+    "jscrambler": "0.5.1"
   },
   "keywords": [
     "gulpplugin",
